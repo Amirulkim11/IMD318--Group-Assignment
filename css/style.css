@@ -1,0 +1,638 @@
+/* ===============================
+   GLOBAL RESET
+================================ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: whitesmoke;
+  color: dimgray;
+  line-height: 1.6;
+}
+
+/* ===============================
+   NAVIGATION BAR
+================================ */
+.nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  padding: 15px 20px;
+  background-color: #d2691e;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  border-radius: 12px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.nav a {
+  text-decoration: none;
+  color: white;
+  font-weight: 600;
+  transition: color 0.3s;
+}
+
+.nav a:hover,
+.nav a.active {
+  color: black;
+}
+
+/* ===============================
+   HERO HEADER
+================================ */
+.header {
+  width: 100%;
+  height: 80vh;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header-overlay {
+  background-color: rgba(0,0,0,0.4);
+  padding: 30px 50px;
+  border-radius: 12px;
+  text-align: center;
+}
+
+.header-overlay h1 {
+  color: white;
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.header-overlay p {
+  color: white;
+  font-size: 1.5rem;
+}
+
+/* ===============================
+   GENERAL SECTION
+================================ */
+.section {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.section h2 {
+  font-size: 2rem;
+  margin-bottom: 40px;
+  color: #333;
+}
+
+/* ===============================
+   ABOUT BOX (WHO WE ARE + BUSINESS)
+================================ */
+.about-box {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  padding: 20px;
+}
+
+.about-box .about-text {
+  background-color: white;
+  padding: 25px 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  max-width: 500px;
+  flex: 1 1 400px;
+  text-align: left;
+}
+
+.about-box .about-text h2 {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+  color: #d2691e;
+}
+
+.about-box .about-text p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #555;
+}
+
+/* ===============================
+   OPEN HOURS TABLE
+================================ */
+.open-hours-section {
+  padding: 10px 30px;
+  text-align: center;
+}
+
+.open-hours-section {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.open-hours-section h2 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  color: #d2691e;
+}
+
+.open-hours-section table {
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto;
+  border-collapse: separate; /* supaya row ada spacing */
+  border-spacing: 0 10px;    /* jarak antara row */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  border-radius: 12px;
+  overflow: hidden;
+  background-color: white;
+}
+
+.open-hours-section th,
+.open-hours-section td {
+  padding: 15px 20px;
+  text-align: center;       /* tengahkan text */
+  border-bottom: none;      /* hilangkan border bawah supaya row ada jarak */
+}
+
+.open-hours-section th {
+  background-color: #f4f4f4;
+  font-weight: 600;
+  color: #333;
+  border-bottom: 1px solid #eee; /* border tetap ada pada header */
+}
+
+.open-hours-section tr {
+  background-color: #fff; /* row putih */
+  border-radius: 12px;    /* bulatkan sudut row */
+}
+
+.open-hours-section tr:nth-child(even) {
+  background-color: #fafafa; /* striping row */
+}
+
+
+/* ===============================
+   MENU PAGE
+================================ */
+.menu-title {
+  font-size: 2rem;
+  text-align: center;
+  margin: 40px 0 20px 0;
+  color: #333;
+}
+
+.menu-items {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+  padding: 0 20px 40px 20px;
+  justify-items: center;
+}
+
+.menu-card {
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  overflow: hidden;
+  width: 100%;
+  max-width: 250px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.menu-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.menu-info {
+  padding: 15px;
+}
+
+.menu-info h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.menu-info .price {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #d2691e;
+}
+
+.menu-info button {
+  background-color: #d2691e;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: background-color 0.3s;
+}
+
+.menu-info button:hover {
+  background-color: #b35918; (burnt orange)
+}
+
+/* CART BOX */
+.cart-box {
+  position: fixed;
+  top: 100px;
+  right: 20px;
+  width: 250px;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  padding: 15px;
+  z-index: 200;
+}
+
+.cart-box h3 {
+  margin-bottom: 10px;
+}
+
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.cart-item button {
+  background: none;
+  border: none;
+  color: red;
+  cursor: pointer;
+}
+
+.pay-btn {
+  background-color: #d2691e;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.pay-btn:hover {
+  background-color: #b35918;
+}
+
+/* ===============================
+   OUTLETS PAGE
+================================ */
+.featured-hq {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.featured-hq h2 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+.hq-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.hq-container img {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+.hq-info {
+  max-width: 400px;
+  text-align: left;
+}
+
+.hq-info h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.hq-info p {
+  font-size: 1rem;
+  color: #555;
+}
+
+/* ===============================
+   OUTLETS PAGE WITH BODY IMAGE
+================================ */
+.outlets-section {
+  padding: 60px 20px;
+  text-align: center;
+  position: relative;
+  background-image: url('../images/outlet-bg.jpg'); /* gambar besar di belakang */
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; /* melekat pada body */
+  color: white; /* teks lebih nampak atas background */
+}
+
+.outlets-section h2 {
+  font-size: 2rem;
+  margin-bottom: 40px;
+  color: black; /* highlight tajuk di atas bg */
+  text-shadow: 1px 1px 5px rgba(0,0,0,0.7);
+}
+
+.outlets-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  justify-items: center;
+  align-items: stretch;
+}
+
+.outlet-card {
+  background-color: rgba(255, 255, 255, 0.9); /* semi-transparent supaya bg nampak */
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  width: 100%;
+  max-width: 250px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.outlet-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-bottom: 1px solid #ddd;
+}
+
+.outlet-name {
+  margin-top: auto;
+  padding: 12px 0;
+  font-weight: 600;
+  color: #d2691e;
+  min-height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+/* ===============================
+   CONTACT PAGE
+================================ */
+.contact-container {
+  max-width: 900px;
+  margin: 40px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding: 0 20px;
+}
+
+.contact-top {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+
+.contact-box {
+  background-color: white;
+  border-radius: 12px;
+  padding: 20px;
+  flex: 1 1 300px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  text-align: center;
+}
+
+.contact-box h2 {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+}
+
+.contact-box p {
+  font-size: 1rem;
+  margin-bottom: 10px;
+  color: #555;
+}
+
+.contact-box img.logo {
+  width: 100%;
+  max-width: 250px;
+  border-radius: 12px;
+  margin-bottom: 10px;
+}
+
+.wide-form .form-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.wide-form input,
+.wide-form textarea {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+.wide-form button {
+  background-color: #d2691e;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s;
+}
+
+.wide-form button:hover {
+  background-color: #b35918;
+}
+
+/* ===============================
+   FOOTER
+================================ */
+.footer {
+  background-color: #d2691e;
+  color: white;
+  padding: 20px 20px;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+/* ===============================
+   VIDEO SECTION
+================================ */
+.video-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.video-container video {
+  width: 80%;
+  max-width: 700px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.video-btn {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.video-btn button {
+  background-color: #d2691e;
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.video-btn button:hover {
+  background-color: #b35918;
+}
+
+/* ===============================
+   LEARN MORE ABOUT US BOX
+================================ */
+.learn-more-box {
+  background-color: white;
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 30px 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  text-align: center;
+}
+
+.learn-more-box h2 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+  color: #d2691e;
+}
+
+.learn-more-box p {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.learn-more-box a {
+  display: inline-block;
+  text-decoration: none;
+  background-color: #d2691e;
+  color: white;
+  padding: 10px 25px;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: background-color 0.3s;
+}
+
+.learn-more-box a:hover {
+  background-color: #b35918;
+}
+
+/* ===============================
+   LATEST PRODUCTS - CENTERED
+================================ */
+.latest-products {
+  padding: 40px 20px;
+}
+
+.latest-products h2 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  color: #333;
+  text-align: center;
+}
+
+/* gunakan flex supaya card selalu center */
+.latest-products .latest-products {
+  display: flex;
+  gap: 30px;
+  overflow-x: auto;
+  padding-bottom: 10px;
+  justify-content: center;
+}
+
+.latest-products .product-card {
+  flex: 0 0 280px;
+  background-color: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+/* gambar sentiasa center dalam card */
+.latest-products .product-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto;
+}
+
+.latest-products .product-info {
+  padding: 15px;
+}
+
+.latest-products .product-info h3 {
+  font-size: 1.3rem;
+  margin: 10px 0 5px 0;
+  color: #d2691e;
+}
+
+.latest-products .product-info p {
+  font-size: 1rem;
+  color: #555;
+}
+
+/* ===============================
+   RESPONSIVE GLOBAL
+================================ */
+@media (max-width: 768px) {
+  .header-overlay h1 { font-size: 2.2rem; }
+  .header-overlay p { font-size: 1.2rem; }
+  .menu-items { grid-template-columns: 1fr; }
+  .products-grid { grid-template-columns: 1fr; }
+  .hq-container { flex-direction: column; }
+  .about-box { flex-direction: column; padding: 40px 20px; }
+  .contact-top { flex-direction: column; }
+  .latest-products .latest-products { flex-direction: column; align-items: center; }
+}
+
+@media (max-width: 480px) {
+  .header-overlay h1 { font-size: 1.8rem; }
+  .header-overlay p { font-size: 1rem; }
+  .latest-products .latest-products { flex-direction: column; align-items: center; }
+}

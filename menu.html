@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Menu - OldTown White Coffee</title>
+
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/menu.css">
+</head>
+
+<body>
+
+<!-- NAV -->
+<div class="nav">
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="menu.html" class="active">Menu</a>
+  <a href="outlets.html">Outlets</a>
+  <a href="contact.html">Contact</a>
+</div>
+
+<!-- HEADER -->
+<div class="header" style="background-image:url('images/homepage.webp')">
+  <div class="header-overlay">
+    <h1>Our Menu</h1>
+    <p>Authentic Malaysian Taste</p>
+  </div>
+</div>
+
+<!-- ================= DRINKS ================= -->
+<h2 class="menu-title">beverages</h2>
+<div class="section menu-items">
+
+  <div class="menu-card">
+    <img src="images/white coffee.jpeg">
+    <div class="menu-info">
+      <h3>White Coffee</h3>
+      <p class="price">8.90</p>
+      <button onclick="addToCart('White Coffee',8.90)">Add to Cart</button>
+    </div>
+  </div>
+
+  <div class="menu-card">
+    <img src="images/teh tarik.jpeg">
+    <div class="menu-info">
+      <h3>Teh Tarik</h3>
+      <p class="price">6.90</p>
+      <button onclick="addToCart('Teh Tarik',6.90)">Add to Cart</button>
+    </div>
+  </div>
+
+  <div class="menu-card">
+    <img src="images/americano coffee.jpeg">
+    <div class="menu-info">
+      <h3>Americano Coffee</h3>
+      <p class="price">9.50</p>
+      <button onclick="addToCart('Iced Coffee',9.50)">Add to Cart</button>
+    </div>
+  </div>
+
+  <div class="menu-card">
+    <img src="images/green tea.jpeg">
+    <div class="menu-info">
+      <h3>Green Tea</h3>
+      <p class="price">7.50</p>
+      <button onclick="addToCart('Milo Ais',7.50)">Add to Cart</button>
+    </div>
+  </div>
+
+</div>
+
+<!-- ================= FOOD ================= -->
+<h2 class="menu-title">Food</h2>
+<div class="section menu-items">
+
+  <div class="menu-card">
+    <img src="images/Nasi Lemak.jpeg">
+    <div class="menu-info">
+      <h3>Nasi Lemak</h3>
+      <p class="price">10.90</p>
+      <button onclick="addToCart('Nasi Lemak',10.90)">Add to Cart</button>
+    </div>
+  </div>
+
+  <div class="menu-card">
+    <img src="images/mee goreng.jpg">
+    <div class="menu-info">
+      <h3>Mee Goreng</h3>
+      <p class="price">8.50</p>
+      <button onclick="addToCart('Mee Goreng',8.50)">Add to Cart</button>
+    </div>
+  </div>
+
+  <div class="menu-card">
+    <img src="images/chicken rice.jpeg">
+    <div class="menu-info">
+      <h3>Chicken Rice</h3>
+      <p class="price">11.90</p>
+      <button onclick="addToCart('Chicken Rice',11.90)">Add to Cart</button>
+    </div>
+  </div>
+
+  <div class="menu-card">
+    <img src="images/laksa peneng.jpg">
+    <div class="menu-info">
+      <h3>Laksa Peneng</h3>
+      <p class="price">12.50</p>
+      <button onclick="addToCart('Curry Laksa',12.50)">Add to Cart</button>
+    </div>
+  </div>
+
+</div>
+
+<!-- ================= PASTRY ================= -->
+<h2 class="menu-title">Pastry</h2>
+<div class="section menu-items">
+
+  <div class="menu-card">
+    <img src="images/croissant.jpg">
+    <div class="menu-info">
+      <h3>Croissant</h3>
+      <p class="price">5.50</p>
+      <button onclick="addToCart('Croissant',5.50)">Add to Cart</button>
+    </div>
+  </div>
+
+  <div class="menu-card">
+    <img src="images/chocolate cake.jpg">
+    <div class="menu-info">
+      <h3>Chocolate Cake</h3>
+      <p class="price">7.50</p>
+      <button onclick="addToCart('Chocolate Cake',7.50)">Add to Cart</button>
+    </div>
+  </div>
+
+  <div class="menu-card">
+    <img src="images/cheesecake.jpg">
+    <div class="menu-info">
+      <h3>Cheese Cake</h3>
+      <p class="price">8.50</p>
+      <button onclick="addToCart('Cheese Cake',8.50)">Add to Cart</button>
+    </div>
+  </div>
+
+  <div class="menu-card">
+    <img src="images/blueberry muffin.jpg">
+    <div class="menu-info">
+      <h3>Blueberry Muffin</h3>
+      <p class="price">6.00</p>
+      <button onclick="addToCart('Blueberry Muffin',6.00)">Add to Cart</button>
+    </div>
+  </div>
+
+</div>
+
+<!-- ================= CART ================= -->
+<div class="cart-box">
+  <h3>Your Cart</h3>
+  <div id="cart-items"></div>
+  <p><strong>Total: RM <span id="total">0.00</span></strong></p>
+  <button class="pay-btn" onclick="pay()">Pay</button>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  <p>© 2026 OldTown | Bringing Kopitiam Culture to You</p>
+</div>
+
+<!-- ================= JS ================= -->
+<script>
+let cart = [];
+let total = 0;
+
+function addToCart(name, price){
+  cart.push({name,price});
+  total += price;
+  updateCart();
+}
+
+function updateCart(){
+  const cartDiv = document.getElementById("cart-items");
+  cartDiv.innerHTML = "";
+
+  cart.forEach((item,index)=>{
+    cartDiv.innerHTML += `
+      <div class="cart-item">
+        ${item.name} - RM${item.price.toFixed(2)}
+        <button onclick="removeItem(${index})">x</button>
+      </div>
+    `;
+  });
+
+  document.getElementById("total").innerText = total.toFixed(2);
+}
+
+function removeItem(index){
+  total -= cart[index].price;
+  cart.splice(index,1);
+  updateCart();
+}
+
+function pay(){
+  if(cart.length === 0){
+    alert("Cart is empty!");
+    return;
+  }
+  alert("Payment successful!\nTotal: RM " + total.toFixed(2));
+  cart = [];
+  total = 0;
+  updateCart();
+}
+</script>
+
+</body>
+</html>
