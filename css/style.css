@@ -473,10 +473,10 @@ body {
 }
 
 .icon {
-  width: 20px;        /* saiz icon */
-  height: 20px;
+  width: 8px;        /* saiz icon */
+  height: 8px;
   vertical-align: middle; /* sejajarkan dengan text */
-  margin-right: 8px;       /* jarak antara icon dan text */
+  margin-right: 9px;       /* jarak antara icon dan text */
 }
 
 /* ===============================
@@ -643,6 +643,7 @@ body {
   .header-overlay p { font-size: 1rem; }
   .latest-products .latest-products { flex-direction: column; align-items: center; }
 }
+
 
 
 
