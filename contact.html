@@ -44,7 +44,7 @@
     <!-- Form di bawah -->
     <div class="contact-box">
       <h2>Send us a Message</h2>
-      <form action="send_message.php" method="post" class="wide-form">
+     <form onsubmit="return fakeSubmit();" class="wide-form">
         <div class="form-row">
           <input type="text" id="name" name="name" placeholder="Your Name" required>
           <input type="email" id="email" name="email" placeholder="Your Email" required>
@@ -63,14 +63,16 @@
     <p>© 2026 OldTown | Bringing Kopitiam Culture to You</p>
   </div>
 	
-	 <script>
-  const urlParams = new URLSearchParams(window.location.search);
-  if (urlParams.get("success") === "1") {
+	<script>
+function fakeSubmit() {
     alert("✅ Message sent successfully!");
-  }
+    document.querySelector(".wide-form").reset();
+    return false; // stop page from reloading
+}
 </script>
 
 
 </body>
 </html>
+
 
