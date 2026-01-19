@@ -41,26 +41,22 @@
       </div>
     </div>
 
- <div class="contact-box info-box">
-  <h2>Our Social Media</h2>
-  <p>
-    <img src="images/email.png" alt="Email" class="icon">
-    Email: <a href="mailto:info@oldtown.com">info@oldtown.com</a>
-  </p>
-  <p>
-    <img src="images/phone.png" alt="Phone" class="icon">
-    Phone: <a href="tel:+60312345678">+60 3-1234 5678</a>
-  </p>
-  <p>
-    <img src="images/instagram.png" alt="Instagram" class="icon">
-    Instagram: <a href="https://www.instagram.com/oldtownwhitecoffee" target="_blank">@oldtownwhitecoffee</a>
-  </p>
-  <p>
-    <img src="images/tiktok.png" alt="TikTok" class="icon">
-    TikTok: <a href="https://www.tiktok.com/@oldtownmalaysia" target="_blank">Oldtownmalaysia</a>
-  </p>
-</div>
+    <!-- Form di bawah -->
+    <div class="contact-box">
+      <h2>Send us a Message</h2>
+     <form onsubmit="return fakeSubmit();" class="wide-form">
+        <div class="form-row">
+          <input type="text" id="name" name="name" placeholder="Your Name" required>
+          <input type="email" id="email" name="email" placeholder="Your Email" required>
+        </div>
 
+        <textarea id="message" name="message" rows="4" placeholder="Your Message" required></textarea>
+
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+
+  </div>
 
   <!-- Footer -->
   <div class="footer">
@@ -78,6 +74,3 @@ function fakeSubmit() {
 
 </body>
 </html>
-
-
-
