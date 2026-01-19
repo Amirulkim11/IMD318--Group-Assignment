@@ -472,13 +472,6 @@ body {
   background-color: #b35918;
 }
 
-.icon {
-  width: 20px;   /* saiz icon */
-  height: 20px;
-  vertical-align: middle; /* sejajarkan dengan text */
-  margin-right: 8px;      /* jarak antara icon dan text */
-}
-
 /* ===============================
    FOOTER
 ================================ */
@@ -643,4 +636,3 @@ body {
   .header-overlay p { font-size: 1rem; }
   .latest-products .latest-products { flex-direction: column; align-items: center; }
 }
-
